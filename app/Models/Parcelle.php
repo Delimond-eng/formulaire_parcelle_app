@@ -85,7 +85,7 @@ class Parcelle extends Model
        do {
             $letters = strtoupper(Str::random(2));
             $digits = rand(1000, 9999);
-            $code ="KN"."-"."PC"."-".$communeCode."-".$numQuartier."-".$digits."-".$letters;
+            $code ="KN-"."PC-".$communeCode."-".$numQuartier."-".$digits."-".$letters;
         } while (self::where('nip_parcelle', $code)->exists());
         return $code;
     }
